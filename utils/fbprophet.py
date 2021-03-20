@@ -1,8 +1,10 @@
-"""
+'''
 Simple fbprophet helpers
-"""
+'''
 from fbprophet import Prophet
+import streamlit as st
 
+@st.cache
 def forecast_raw(data, duration):
   time_column = 'Datetime' if 'Datetime' in data.columns else 'Date'
   if time_column == 'Datetime':
