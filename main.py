@@ -18,12 +18,15 @@ end_time = st.slider('Forecast end date:', TWO_DAYS_FROM_TODAY,
                     TWO_YEARS_FROM_TODAY, value=SIXTY_DAYS_FROM_TODAY)
 
 load_state = st.text('Loading data...')
+
 data_start = data_start_date(end_time)
 data = load_data(ticker, data_start)
-load_state.text('Loading data... Done!')
 
 st.subheader('Live Data')
-st.plotly_chart(live_plot(data), use_container_width=True)
+live_fig = live_plot(data)
+st.plotly_chart(live_fig, use_container_width=True)
+
+load_state.text('Loading data... Done!')
 
 
 load_state.text('Training data...')

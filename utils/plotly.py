@@ -15,12 +15,13 @@ def live_plot(data):
   fig.add_trace(
     go.Bar(x = data[time_column], y=data['Volume']), secondary_y=False)
   fig.layout.yaxis2.showgrid=False
+  hide_range = [dict(bounds=['sat', 'mon'])]
+  if time_column == 'Datetime':
+    hide_range.append(dict(bounds=[16, 9.5], pattern='hour'))
   fig.update_xaxes(
         rangeslider_visible=True,
-        rangebreaks=[
-          dict(bounds=['sat', 'mon']),  # hide weekends
-          dict(bounds=[16, 9.5], pattern='hour'),  # hide after hours
-        ])
+        rangebreaks=hide_range)
+
   fig.update(layout_showlegend=False)
   fig.update_layout(width=1900, height=600,
     margin={ 'l': 40, 'r': 40, 't': 10, 'b': 10 })
