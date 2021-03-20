@@ -13,4 +13,3 @@ def forecast_raw(data, duration):
   m.fit(df_train)
   future = m.make_future_dataframe(duration.days)
   return m, m.predict(future)
-

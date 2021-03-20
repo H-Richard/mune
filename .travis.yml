@@ -7,4 +7,4 @@ install:
   - pipenv install --dev
 
 script:
-  - pylint **/*.py
+  - pipenv run lint
