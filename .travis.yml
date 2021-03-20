@@ -8,3 +8,4 @@ install:
 
 script:
   - pipenv run lint
+  
