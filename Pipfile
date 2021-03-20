@@ -14,3 +14,7 @@ pylint = "*"
 
 [requires]
 python_version = "3.9"
+
+[scripts]
+start = "streamlit run main.py"
+lint = "pylint ./utils main.py"
