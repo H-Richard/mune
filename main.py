@@ -10,6 +10,7 @@ from utils.util import scale_indices
 from utils.fbprophet import forecast_raw
 from utils.plotly import live_plot, add_indices
 from fbprophet.plot import plot_plotly
+from plotly.subplots import make_subplots
 
 st.set_page_config(layout='wide')
 st.title('MUNE: Stock Analytics')
@@ -24,10 +25,9 @@ data = load_data(ticker, data_start)
 indices_data = scale_indices(load_indices(data_start), data)
 
 st.subheader('Live Data')
-live_fig = live_plot(data)
-add_indices(live_fig, indices_data)
-# TODO: Shift candlestick to end of live_fig.data
-# st.write(live_fig.data)
+fig = make_subplots(specs=[[{'secondary_y': True}]])
+fig = add_indices(fig, indices_data)
+live_fig = live_plot(fig, data)
 st.plotly_chart(live_fig, use_container_width=True)
 
 load_state.text('Loading data... Done!')

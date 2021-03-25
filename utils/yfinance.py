@@ -18,4 +18,4 @@ def load_data(ticker, start):
 # Returns a list of data for popular stock indices
 def load_indices(start):
   load = lambda x: load_data(x, start)
-  return [load(index) for index in INDICES]
+  return dict(zip(INDICES, [load(index) for index in INDICES]))
