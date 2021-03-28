@@ -27,19 +27,20 @@ All kinds of PRs are welcome, just make sure `pipenv run lint` passes :smile:. F
 
 Currently, `staging` and `main` are being auto deployed with heroku (only if travis is happy with the changes). See the **Environment** panel or click [here](https://github.com/H-Richard/mune/deployments) for the live instances as the urls are subject to change.
 
+Thanks to the invite to join [Streamlit Sharing](https://streamlit.io/sharing), this project is also now deployed on a much better cloud server, see the **Open in Streamlit** badge or click [here](https://share.streamlit.io/h-richard/mune/main/main.py).
+
 ## Features
 
  - basic time series forecasting
+ - historical performance against indices
 
 ## Backlog 
 
- - historical performance against indices
  - divident payout adjustments
  - warning against leveraged etfs
  - better caching
  - automated tests
  - improve chart performance
- - acquire massive amounts of wealth, then deploy to a better cloud server
 
 ## Known Issues
  - pipenv fails to install `fbprophet` the first time, retry always works
