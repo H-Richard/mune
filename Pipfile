@@ -5,7 +5,7 @@ name = "pypi"
 
 [packages]
 streamlit = "*"
-yfinance = "*"
+yfinance = ">=0.1.63"
 fbprophet = "*"
 plotly = "*"
 
