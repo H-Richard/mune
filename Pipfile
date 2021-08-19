@@ -8,6 +8,7 @@ streamlit = "*"
 yfinance = ">=0.1.63"
 fbprophet = "*"
 plotly = "*"
+pystan = "==2.19.1.1"
 
 [dev-packages]
 pylint = "*"
